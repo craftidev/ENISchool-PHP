@@ -10,3 +10,12 @@ Exercises from ENI School on PHP
 - date/time operations
 - function
 - random
+- forms
+- class, abstract, interface
+- redirection, import
+- db, crud, admin
+- php interact with css
+- session
+- MVC architecture
+- template
+- error
