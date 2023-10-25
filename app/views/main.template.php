@@ -8,7 +8,7 @@
 <body>
     <h1>Rate restaurants</h1>
 
-    <menu>generate menu here</menu>
-    <main>generate content here</main>
+    <menu><?= $menu_display; ?></menu>
+    <main><?= $main_display; ?></main>
 </body>
 </html>
