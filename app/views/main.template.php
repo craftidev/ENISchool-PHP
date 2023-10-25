@@ -13,7 +13,8 @@
 <body>
     <h1>Rate restaurants</h1>
 
-    <menu><?= $menu_display; ?></menu>
-    <main><?= $main_display; ?></main>
+    <menu><?php require_once(VIEWS_DIR . 'menu.php'); ?></menu>
+    <main><?php require_once(VIEWS_DIR . 'createRestaurant.php'); ?></main>
+    
 </body>
 </html>

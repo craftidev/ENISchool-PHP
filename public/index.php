@@ -1,7 +1,8 @@
 <?php
-define('VIEWS_DIR', dirname(__DIR__) . '/app/views/');
+# Display errors
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-$menu_display = file_get_contents(VIEWS_DIR . 'menu.php');
-$main_display = file_get_contents(VIEWS_DIR . 'createRestaurant.template.php');
+define('VIEWS_DIR', dirname(__DIR__) . '/app/views/');
 
 require_once(VIEWS_DIR . 'main.template.php');
