@@ -1,4 +1,4 @@
-<form method="POST">
+<form method="POST" class="flex-form">
     <label for="name">Name: </label>
     <input name="name" type="text" />
 
