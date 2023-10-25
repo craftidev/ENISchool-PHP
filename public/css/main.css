@@ -1,0 +1,22 @@
+h1, menu, main {
+    margin: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+textarea {
+    border: 1px solid black;
+}
+
+.flex-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    & > * {
+        width: fit-content;
+        min-width: 5rem;
+    }
+}
