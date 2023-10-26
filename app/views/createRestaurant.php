@@ -7,6 +7,34 @@ $phone       = isset($_POST["phone"])       ? $_POST["phone"]       : "";
 $description = isset($_POST["description"]) ? $_POST["description"] : "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // TODO test user inputs
+    
+    try {
+        require_once(CONTROLLERS_DIR . 'connectionPDO.php');
+        $pdo = new connectionPDO();
+        $connection = $pdo -> getConnection();
+        
+        $sql =
+            "INSERT INTO restaurants
+            (name, address, postalCode, city, phone, description)
+            VALUES (:name, :address, :postalCode, :city, :phone, :description)";
+
+        $statement = $connection -> prepare($sql);
+
+        $statement -> bindParam(':name', $name, PDO::PARAM_STR);
+        $statement -> bindParam(':address', $address, PDO::PARAM_STR);
+        $statement -> bindParam(':postalCode', $postalCode, PDO::PARAM_INT);
+        $statement -> bindParam(':city', $city, PDO::PARAM_STR);
+        $statement -> bindParam(':phone', $phone, PDO::PARAM_STR);
+        $statement -> bindParam(':description', $description, PDO::PARAM_STR);
+
+        $statement->execute();
+
+    } catch (\Throwable $t) {
+        echo 'Error: ' . $t->getMessage();
+        echo '<br />';
+    }
+
     echo "Name: "        . $name .        "<br/>";
     echo "Address: "     . $address .     "<br/>";
     echo "Postal code: " . $postalCode .  "<br/>";

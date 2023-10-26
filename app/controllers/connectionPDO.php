@@ -1,8 +1,8 @@
 <?php
-class connexionPDO {
+class connectionPDO {
     private $connection = null;
 
-    public function getConnexion() {
+    public function getConnection() {
         if ($this->connection === null) {
             try {
                 $host = 'db';
