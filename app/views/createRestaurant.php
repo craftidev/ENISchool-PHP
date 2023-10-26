@@ -1,5 +1,5 @@
 <?php
-    if (isset($_POST['name'])) {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $name = $_POST["name"];
         $address = $_POST["address"];
         $postalCode = $_POST["postalCode"];
@@ -7,12 +7,12 @@
         $phone = $_POST["phone"];
         $description = $_POST["description"];
 
-        echo "\nName: " . $name;
-        echo "\nAddress: " . $address;
-        echo "\nPostal code: " . $postalCode;
-        echo "\nCity: " . $city;
-        echo "\nPhone: " . $phone;
-        echo "\nDescription: " . $description;
+        echo "Name: " . $name . "<br/>";
+        echo "Address: " . $address . "<br/>";
+        echo "Postal code: " . $postalCode . "<br/>";
+        echo "City: " . $city . "<br/>";
+        echo "Phone: " . $phone . "<br/>";
+        echo "Description: " . $description . "<br/>";
     }
 ?>
 
